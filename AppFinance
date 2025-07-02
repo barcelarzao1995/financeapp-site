@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FinanceApp - Controle suas Finanças</title>
+  <link rel="icon" href="icone.png" type="image/png" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #004444;
+      background-color: #003c3c;
       color: #fff;
       margin: 0;
       padding: 40px 20px;
@@ -16,6 +17,10 @@
     .container {
       max-width: 600px;
       margin: auto;
+    }
+    .logo {
+      width: 120px;
+      margin: 20px auto;
     }
     h1 {
       font-size: 32px;
@@ -35,36 +40,43 @@
     a:hover {
       text-decoration: underline;
     }
-    .logo {
-      width: 120px;
-      margin: 20px auto;
+    .btn-download {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #00cccc;
+      color: #003c3c;
+      padding: 14px 24px;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-download:hover {
+      background-color: #00b3b3;
     }
   </style>
-  <script>
-    // Redireciona automaticamente para o app se houver ?token=xxx
-    window.onload = function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const token = urlParams.get('token');
-      if (token) {
-        const deepLink = `financeapp://reset-password/${token}`;
-        window.location.href = deepLink;
-      }
-    };
-  </script>
 </head>
 <body>
   <div class="container">
-    <img src="icone-financeapp.png" alt="FinanceApp logo" class="logo"/>
+    <img src="icone.png" alt="Logo do FinanceApp" class="logo"/>
     <h1>FinanceApp</h1>
     <p>
-      O FinanceApp é um aplicativo simples e eficaz para você organizar suas finanças, registrar transações, anotar despesas, visualizar gráficos e planejar seu orçamento.
+      O FinanceApp é um app simples e poderoso para organizar suas finanças, registrar transações, anotar despesas, visualizar gráficos e planejar seu orçamento.
     </p>
     <p>
-      Totalmente gratuito, com recursos intuitivos, tema escuro elegante e disponível na Play Store.
+      Totalmente gratuito, com tema escuro moderno e fácil de usar.
     </p>
+
+    <!-- Botão de download -->
+    <a href="https://play.google.com/store/apps/details?id=com.seupacote.financeapp" class="btn-download" target="_blank">
+      📲 Baixar na Play Store
+    </a>
+
     <div class="contact">
       <p><strong>Contato:</strong> <a href="mailto:seuemail@email.com">seuemail@email.com</a></p>
-      <p><strong>Política de Privacidade:</strong> <a href="https://seusite.com/politica">Clique aqui</a></p>
+      <p><strong>Política de Privacidade:</strong> <a href="https://seusite.com/politica" target="_blank">Clique aqui</a></p>
     </div>
   </div>
 </body>
