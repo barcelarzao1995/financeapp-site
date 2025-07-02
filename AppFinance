@@ -39,17 +39,18 @@
       width: 120px;
       margin: 20px auto;
     }
-    .btn {
-      margin-top: 20px;
-      display: inline-block;
-      background-color: #00e0e0;
-      color: #004444;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-    }
   </style>
+  <script>
+    // Redireciona automaticamente para o app se houver ?token=xxx
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('token');
+      if (token) {
+        const deepLink = `financeapp://reset-password/${token}`;
+        window.location.href = deepLink;
+      }
+    };
+  </script>
 </head>
 <body>
   <div class="container">
@@ -61,11 +62,6 @@
     <p>
       Totalmente gratuito, com recursos intuitivos, tema escuro elegante e disponível na Play Store.
     </p>
-
-    <a href="financeapp://reset-password/SEU_TOKEN_AQUI" class="btn">
-      Redefinir Senha no App
-    </a>
-
     <div class="contact">
       <p><strong>Contato:</strong> <a href="mailto:seuemail@email.com">seuemail@email.com</a></p>
       <p><strong>Política de Privacidade:</strong> <a href="https://seusite.com/politica">Clique aqui</a></p>
